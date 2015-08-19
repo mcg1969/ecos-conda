@@ -1,0 +1,35 @@
+package:
+  name: ecos
+  version: 2.0.2
+
+source:
+  git_url: https://github.com/embotech/ecos-python
+  git_rev: v2.0.2
+
+requirements:
+  build:
+    - python
+    - numpy >=1.6
+    - scipy >=0.9
+    - setuptools
+  run:
+    - python
+    - numpy >=1.6
+    - scipy >=0.9
+
+test:
+  requires:
+    - coverage
+    - nose
+  commands:
+    - nosetests --with-coverage --cover-package=ecos $SRC_DIR/src/test_interface.py $SRC_DIR/src/test_interface_bb.py
+
+build:
+  number: 0
+  script: python setup.py install
+
+about:
+  home: https://github.com/embotech/ecos-python
+  license: 'GNU General Public License 3.0'
+  summary: 'Numerical software for solving convex second-order cone problems.'
+
