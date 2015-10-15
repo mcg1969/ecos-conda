@@ -12,4 +12,6 @@ script:
  - conda build .
 build_targets:
  - conda
+env:
+ - PYTHONIOENCODING=UTF-8
 
